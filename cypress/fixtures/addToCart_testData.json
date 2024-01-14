@@ -1,0 +1,12 @@
+{
+    "login":{
+        "inputLoginUsername": "some_emailadd@test.com",
+        "inputLoginPassword": "hello123"
+    },
+    "product":{
+        "productName": "MacBook"
+    },
+    "message":{
+        "successMessage": "Success: You have added MacBook to your shopping cart!"
+    }
+}
