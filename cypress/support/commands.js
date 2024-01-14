@@ -30,3 +30,11 @@ Cypress.Commands.add('login',(inputLoginUsername,inputLoginPassword)=>{
     cy.get('#input-password').type(inputLoginPassword)
     cy.get('input.btn.btn-primary').click()
 })
+
+Cypress.Commands.add('logout',()=>{
+    cy.get('span.caret').click()
+    cy.get('ul.dropdown-menu.dropdown-menu-right').should('be.visible')
+    cy.get('li').contains('Logout').click()
+    cy.url().should('contain','route=account/logout')
+    cy.get('h1').should('contain','Account Logout')
+})

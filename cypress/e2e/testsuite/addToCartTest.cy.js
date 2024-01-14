@@ -9,8 +9,14 @@ describe("Add To Cart Test Suite",()=>{
     })
 
     it("User Adds Product To Cart Successfully",()=>{
+        homePage_keywords_obj.accountInUrlIsVerified()
+        homePage_keywords_obj.accountHeaderElementsAreVerified()
         homePage_keywords_obj.searchProduct(addToCart_testData.product.productName)
         homePage_keywords_obj.clickAddToCartButton()
         homePage_keywords_obj.verifySuccessAlertMessage().should('contain',addToCart_testData.message.successMessage).and('contain',addToCart_testData.product.productName)
+    })
+
+    after(()=>{
+        cy.logout()
     })
 })
