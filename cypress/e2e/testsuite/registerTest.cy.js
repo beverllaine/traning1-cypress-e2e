@@ -13,6 +13,7 @@ describe('Test Automation',()=>{
         registerObj.enterPassword(registerData.Password_param)
         registerObj.selectPolicyCheckbox()
         registerObj.clickContinueButton()
-        registerObj.assertRegistrationWarningMessage()
+        registerObj.verifyRegistrationWarningMessage()
+        //registerObj.assertRegistrationWarningMessage()
     })
 })

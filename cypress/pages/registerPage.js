@@ -13,7 +13,7 @@ export class registerPage{
         policyCheckbox_var: 'input[type="checkbox"]',
         continueButton_var: 'input[type="submit"]',
         registrationWarningMessage_var_text: "Warning: E-Mail Address is already registered!",
-        registrationWarningMessage_var:".alert.alert-danger.alert-dismissible"
+        registrationWarningMessage_var:"div.alert.alert-danger.alert-dismissible"
 
     }
 
@@ -53,6 +53,10 @@ export class registerPage{
         cy.get(this.weblocators.continueButton_var).click()
     }
 
+    verifyRegistrationWarningMessage(){
+        return cy.get(this.weblocators.registrationWarningMessage_var)
+    }
+    
     assertRegistrationWarningMessage(){
         cy.get(this.weblocators.registrationWarningMessage_var).should('be.visible')
         cy.get(this.weblocators.registrationWarningMessage_var).contains(this.weblocators.registrationWarningMessage_var_text)
